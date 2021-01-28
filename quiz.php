@@ -6,7 +6,7 @@
 
     require_once "includes/connect.php";
 
-    $url = $_GET['url'];
+    $url = $_SERVER['REQUEST_URI'];
 
     $result = mysqli_query($connect, "SELECT * FROM `polls` WHERE url1 = '$url' OR url2 = '$url' OR url3 = '$url'");
 
