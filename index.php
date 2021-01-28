@@ -61,13 +61,13 @@
     <footer>
         <?php
           require_once "includes/connect.php";
-          $memas = mysqli_query($connect, "SELECT * FROM `polls`");
+          $memas = mysqli_query($link, "SELECT * FROM `polls`");
           if(mysqli_num_rows($memas) > 0 and isset($_SESSION['user'])){
 //              $users = mysqli_fetch_assoc($memas);
             while($users = mysqli_fetch_assoc($memas)){
                 echo "<h2>ОПРОС:".$users['title']."</h2>";
                 $title = $users["title"];
-                $dop = mysqli_query($connect, "SELECT * FROM `answ` WHERE title = '$title';");
+                $dop = mysqli_query($link, "SELECT * FROM `answ` WHERE title = '$title';");
                 echo "Вопросы: ";
                 echo $users['exiter'];
                 echo "<h5>Ответы людей(а может и нет):</h5>";
