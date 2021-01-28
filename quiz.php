@@ -8,7 +8,7 @@
 
     $url = $_SERVER['REQUEST_URI'];
 
-    $result = mysqli_query($connect, "SELECT * FROM `polls` WHERE url1 = '$url' OR url2 = '$url' OR url3 = '$url'");
+    $result = mysqli_query($link, "SELECT * FROM `polls` WHERE url1 = '$url' OR url2 = '$url' OR url3 = '$url'");
 
     if(mysqli_num_rows($result) > 0){
         $info = mysqli_fetch_assoc($result);
