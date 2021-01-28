@@ -49,5 +49,5 @@ mysqli_query($connect, "INSERT INTO `polls` (`id`, `title`, `exiter`, `value_pol
         'url3' => $time3,
 
     ];
-    header('Location: /urls.php');
+    header('Location: urls.php');
 ?>
