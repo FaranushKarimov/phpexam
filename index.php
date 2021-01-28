@@ -98,8 +98,7 @@
     
     <main>
         <?php
-          //  $link = mysqli_connect('std-mysql', 'std_961', 'sungur05', 'std_961');
-          $link = mysqli_connect('localhost', 'root', '', 'std_961');
+          $link = mysqli_connect('localhost', 'root', '', 'expert');
 
             if(mysqli_connect_errno()) {
                 echo 'Ошибка в подключении ('.mysqli_connect_errno().'): '.mysqli_connect_error().'<br>';
