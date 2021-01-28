@@ -10,7 +10,7 @@
 
     if($pass1 == $pass2){
         $pass1 = md5($pass1);
-        mysqli_query($connect, "INSERT INTO `users` (`id`, `name`, `login`, `email`, `password`, `privilege`) VALUES (NULL, '$full_name', '$login', '$email', '$pass1', 'admin')");
+        mysqli_query($link, "INSERT INTO `users` (`id`, `name`, `login`, `email`, `password`, `privilege`) VALUES (NULL, '$full_name', '$login', '$email', '$pass1', 'admin')");
         $_SESSION['message'] = 'Регистрация прошла успешно!';
         header('Location: ../login.php');
     }
