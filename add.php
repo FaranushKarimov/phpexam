@@ -1,39 +1,40 @@
-<?
+<?php
     session_start();
-
-
-?>
-<form method="post" action="add.php/?add">
-    
-    <label for="nazv">Название для экспертной сессии</label><input name="nazv" type="text" placeholder="Название сесии">
-    <input type="submit" name="button" value="Добавить сессию">
-
-</form>
-
-<?
-    if(isset($_POST['button']) && $_POST['button'] == 'Добавить сессию') {
-      $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-
-        if(mysqli_connect_errno()) {
-            echo 'Ошибка подключения к БД: ' . mysqli_connect_error();
-        }
-
-        $query =                "CREATE TABLE ".$_POST['nazv']."(
-                                id INT NOT NULL PRIMARY KEY,
-                                Question text NOT NULL,
-                                Answer text NOT NULL
-                                )";
-        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-
-        if($result) {
-            echo 'Таблица создана успешно!';
-        }
+    $id = $_SESSION["test"]['uuid'];
+    $arrid = $_SESSION["test"]['all_ids'];
+    $array = $_SESSION['test']['tests'];
+    if(!isset($_SESSION["test"]['uuid'])){
+        $id = 0;
     }
-    $tableName = $_POST['nazv'];
-    $_SESSION['tableName'] = $_POST['nazv'];
-
-    $sql = "CREATE TABLE ".$tableName.';';
-
-    
-
+    else{
+        $id++;
+    }
+    if(!isset($arrid)){
+        $arrid = [];
+    }
+    else{
+        array_push($arrid, $id);
+    }
+    if(!isset($array)){
+        $array = [];
+    }
+    else{
+        array_push($array, "<div class = 'fields'>
+                                        <label for = 'naming$id'>Название поля</label>
+                                        <input type='text' name = 'naming$id' id = 'naming$id'>
+                                        <select name = 'mem$id'>
+                                            <option value='chislo'>Число</option>
+                                            <option value='pol_chilo'>Положительное число</option>
+                                            <option value='string'>Строка</option>
+                                            <option value='text'>Текст</option>
+                                            <option value='ed_vibor'>С единственным выбором </option>
+                                            <option value='eb_monz'>С множественным выбором</option>
+                                        </select>
+                                        <a href = 'delete.php/?delete=$id'>Удалить</a>
+                                    </div>");
+    }
+    $_SESSION['test'] = ['tests' => $array,
+                        'uuid' => $id,
+                        'all_ids' => $arrid];
+    header("Location: maker.php");
 ?>
