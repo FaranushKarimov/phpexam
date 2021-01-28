@@ -12,7 +12,7 @@
 
 <?
     if(isset($_POST['button']) && $_POST['button'] == 'Добавить сессию') {
-       $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+      $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
 
         if(mysqli_connect_errno()) {
             echo 'Ошибка подключения к БД: ' . mysqli_connect_error();

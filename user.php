@@ -108,9 +108,9 @@
 
     <?php
         if (isset($_POST['button']) && $_POST['button'] == 'Ответить') {
-          //  $link = mysqli_connect('localhost', 'root', '', 'expert');
-            $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-            $_SESSION['link'] = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+          // $link = mysqli_connect('localhost', 'root', '', 'expert');
+           $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+            $_SESSION['link'] = mysqli_connect('localhost', 'root', '', 'expert');
 
                 if(mysqli_connect_errno()) {
                     echo 'Ошибка подключения к БД: ' . mysqli_connect_error();
