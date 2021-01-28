@@ -11,7 +11,7 @@
         $text = $text.$_POST['info'.$i].",";
     }
 
-    mysqli_query($connect, "INSERT INTO `answ` (`id`, `title`, `answers`) VALUES (NULL, '$title', '$text');");
+    mysqli_query($link, "INSERT INTO `answ` (`id`, `title`, `answers`) VALUES (NULL, '$title', '$text');");
 
     echo "Вы успешно ответили на вопросы!";
 
