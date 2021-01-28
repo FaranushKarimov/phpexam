@@ -10,8 +10,8 @@
 
 <?php
         echo '<a href="?s=yes" id="ssil">Сгенерировать ссылку</a>';
-        $link = mysqli_connect('localhost', 'root', '', 'expert');
-
+      //  $link = mysqli_connect('localhost', 'root', '', 'expert');
+          $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
 
         $_SESSION['randomZnach'] = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $_SESSION['newSilka'] = str_shuffle($_SESSION['randomZnach'], 12);

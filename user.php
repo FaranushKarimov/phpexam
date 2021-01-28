@@ -108,9 +108,9 @@
 
     <?php
         if (isset($_POST['button']) && $_POST['button'] == 'Ответить') {
-            $link = mysqli_connect('localhost', 'root', '', 'expert');
-            
-            $_SESSION['link'] = mysqli_connect('localhost', 'root', '', 'expert');
+          //  $link = mysqli_connect('localhost', 'root', '', 'expert');
+            $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+            $_SESSION['link'] = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
 
                 if(mysqli_connect_errno()) {
                     echo 'Ошибка подключения к БД: ' . mysqli_connect_error();
@@ -124,57 +124,57 @@
 
                 if ($_POST['num'] == 7) {
                     $nuresres = 'Правильно';
-                    $numres = "UPDATE answers SET результат='Правильно' WHERE id = 999;";
+                    $numres = "UPDATE answers SET result='Правильно' WHERE id = 999;";
                     $numresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 } else {
                     $nuresres = 'Неправильно';
-                    $numres = "UPDATE answers SET результат='Неправильно' WHERE id = 999;";
+                    $numres = "UPDATE answers SET result='Неправильно' WHERE id = 999;";
                     $numresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 }
                 if($_POST['number'] == 18) {
                     $nresres = 'Правильно';
-                    $numberres = "UPDATE answers SET результат='Правильно' WHERE id = 9;";
+                    $numberres = "UPDATE answers SET result='Правильно' WHERE id = 9;";
                     $numberresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 } else {
                     $nresres = 'Неправильно';
-                    $numberres = "UPDATE answers SET результат='Неправильно' WHERE id = 9;";
+                    $numberres = "UPDATE answers SET result='Неправильно' WHERE id = 9;";
                     $numberresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 }
                 if($_POST['strokaAnswer'] == 'Четыре') {
                     $sresres = 'Правильно';
-                    $srtres = "UPDATE answers SET результат='Правильно' WHERE id = 8;";
+                    $srtres = "UPDATE answers SET result='Правильно' WHERE id = 8;";
                     $strresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 } else {
                     $sresres = 'Неправильно';
-                    $strres = "UPDATE answers SET результат='Неправильно' WHERE id = 8;";
+                    $strres = "UPDATE answers SET result='Неправильно' WHERE id = 8;";
                     $strresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 }
                 if($_POST['textAnswer'] == 'Да') {
                     $tresres = 'Правильно';
-                    $txtres = "UPDATE answers SET результат='Правильно' WHERE id = 5;";
+                    $txtres = "UPDATE answers SET result='Правильно' WHERE id = 5;";
                     $txtresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 } else {
                     $tresres = 'Неправильно';
-                    $txtres = "UPDATE answers SET результат='Неправильно' WHERE id = 5;";
+                    $txtres = "UPDATE answers SET result='Неправильно' WHERE id = 5;";
                     $txtresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 }
                 if($_POST['onceAnsw'] == 1) {
                     $oresres = 'Правильно';
-                    $onceres = "UPDATE answers SET результат='Правильно' WHERE id = 666;";
+                    $onceres = "UPDATE answers SET result='Правильно' WHERE id = 666;";
                     $onceresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 } else {
                     $oresres = 'Неправильно';
-                    $txtres = "UPDATE answers SET результат='Неправильно' WHERE id = 666;";
+                    $txtres = "UPDATE answers SET result='Неправильно' WHERE id = 666;";
                     $txtresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 }
                 if($_POST['mulAnsw'] == 'Да') {
-                    $mulres = "UPDATE answers SET результат='Правильно' WHERE id = 333;";
+                    $mulres = "UPDATE answers SET result='Правильно' WHERE id = 333;";
                     $mresres = 'Правильно';
                     $mulresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 } else {
                     $mresres = 'Неравильно';
 
-                    $mulres = "UPDATE answers SET результат='Неправильно' WHERE id = 333;";
+                    $mulres = "UPDATE answers SET result='Неправильно' WHERE id = 333;";
                     $mulresult = mysqli_query($link, $numres) or die("Ошибка " . mysqli_error($link));
                 }
 
