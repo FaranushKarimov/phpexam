@@ -12,7 +12,6 @@
 
 <?
     if(isset($_POST['button']) && $_POST['button'] == 'Добавить сессию') {
-       // $link = mysqli_connect('std-mysql', 'std_961', 'sungur05', 'std_961');
        $link = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
 
         if(mysqli_connect_errno()) {
